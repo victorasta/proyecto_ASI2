@@ -1,0 +1,1 @@
+CREATE VIEW `cargar_menu` AS SELECT `r`.`nombre` AS `rol`, `m`.`nombre` AS `menu`, `mt`.`nombre` AS `submenu`, `r`.`id` AS `id_rol`, `m`.`id` AS `id_menu`, `mt`.`id_item` AS `id_menu_item` FROM (((`rol` `r` JOIN `rol_menu` `rm`) JOIN `menu` `m`) JOIN `menu_item` `mt`) WHERE `r`.`id` = `rm`.`id_rol` AND `rm`.`id_menu` = `m`.`id` AND `mt`.`id_menu_padre` = `m`.`id`
